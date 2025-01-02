@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <string.h>
 
-void demkytu(char chuoi[], int *chucai, int *chuso, int *dacbiet) {
-    *chucai = *chuso = *dacbiet = 0;
+int chucai = 0;
+int chuso = 0;
+int dacbiet = 0;
+
+void demkytu(char chuoi[]) {
+    chucai = chuso = dacbiet = 0;
     for (int i = 0; i < strlen(chuoi); i++) {
         if ((chuoi[i] >= 'A' && chuoi[i] <= 'Z') || (chuoi[i] >= 'a' && chuoi[i] <= 'z')) {
-            (*chucai)++;
+            chucai++;
         } else if (chuoi[i] >= '0' && chuoi[i] <= '9') {
-            (*chuso)++;
+            chuso++;
         } else {
-            (*dacbiet)++;
+            dacbiet++;
         }
     }
 }
@@ -25,8 +29,7 @@ int main() {
         chuoi[len - 1] = '\0';
     }
 
-    int chucai = 0, chuso = 0, dacbiet = 0;
-    demkytu(chuoi, &chucai, &chuso, &dacbiet);
+    demkytu(chuoi);
     
     printf("So ky tu la chu cai: %d\n", chucai);
     printf("So ky tu la chu so: %d\n", chuso);
@@ -34,4 +37,3 @@ int main() {
 
     return 0;
 }
-
