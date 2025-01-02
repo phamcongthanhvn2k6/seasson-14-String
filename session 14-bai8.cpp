@@ -6,14 +6,14 @@ void viethoa(char chuoi[]) {
     
     if (dodai > 0 && chuoi[0] != ' ') {
         if (chuoi[0] >= 'a' && chuoi[0] <= 'z') {
-            chuoi[0] = chuoi[0] - 'a' + 'A';
+            chuoi[0] -=32;
         }
     }
     
     for (int i = 1; i < dodai; i++) {
         if (chuoi[i - 1] == ' ' && chuoi[i] != ' ') {
             if (chuoi[i] >= 'a' && chuoi[i] <= 'z') {
-                chuoi[i] = chuoi[i] - 'a' + 'A';
+                chuoi[i] -=32;
             }
         }
     }
@@ -36,4 +36,3 @@ int main() {
     
     return 0;
 }
-
